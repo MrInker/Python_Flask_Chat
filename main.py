@@ -16,11 +16,7 @@ def load_messages():
     return data['messages']
 
 
-if os.path.isfile('db.json') == False:
-    with open('db.json', 'w') as file:
-        print('Created db.json')
-if os.path.getsize('db.json') > 0:
-    all_messages = load_messages()
+
 
 
 def add_message(author='Test', text='Test'):  # объявляем ффункуию добавления сообщений с параметрами
@@ -85,4 +81,9 @@ def status_chat():
 
 
 if __name__ == '__main__':
+    if os.path.isfile('db.json') == False:
+        with open('db.json', 'w') as file:
+            print('Created db.json')
+    if os.path.getsize('db.json') > 0:
+        all_messages = load_messages()
     app.run(host=MAIN_HOST, port=8080)  # конфигурируем параметны запускаемого приложения
