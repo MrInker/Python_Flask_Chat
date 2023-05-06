@@ -59,6 +59,8 @@ def get_messages():
 def send_message():
     name = request.args.get('name')  # получаем данные из query запроса к серверу
     text = request.args.get('text')
+
+
     print(f'User: "{name}", say: "{text}"')
     add_message(name, text)
     return 'ok'
@@ -79,7 +81,7 @@ def status_chat():
 
     n_users = int(len(set(doct2)))
 
-    return f'Количество пользователей(считаем что имена уникальные): {n_users},</br></br>Сообщений в чате всего: {n_messages}'
+    return f'Количество пользователей(считаем что имена уникальные): {n_users} </br></br>Сообщений в чате всего: {n_messages}'
 
 
 if __name__ == '__main__':
