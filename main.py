@@ -16,10 +16,15 @@ def load_messages():
     return data['messages']
 
 
-
-
-
 def add_message(author='Test', text='Test'):  # объявляем ффункуию добавления сообщений с параметрами
+    author = author.replace('<', '-')
+    author = author.replace('>', '-')
+    author = author.replace('&', '-')
+    author = author.replace('"', '-')
+    text = text.replace('<', '-')
+    text = text.replace('&', '-')
+    text = text.replace('>', '-')
+    text = text.replace('"', '-')
     message = {
         'author': author,
         'text': text,

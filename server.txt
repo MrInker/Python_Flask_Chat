@@ -21,4 +21,5 @@
 
 # screen -ls  выдает список всех процессов
 
-# screen -x -s <process_id>
+# screen -x -s <process_id> quit
+
